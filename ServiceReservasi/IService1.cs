@@ -12,15 +12,22 @@ namespace ServiceReservasi
     public interface IService1
     {
         [OperationContract]
-        string Pemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi);
+        string pemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi);
+
         [OperationContract]
-        string editPemesanan(string IDPemesanan, string NamaCustomer);
+        string editPemesanan(string IDPemesanan, string NamaCustomer, string No_telpon);
+
         [OperationContract]
         string deletePemesanan(string IDPemesanan);
+
         [OperationContract]
         List<CekLokasi> ReviewLokasi();
+
         [OperationContract]
         List<DetailLokasi> DetailLokasi();
+
+        [OperationContract]
+        List<Pemesanan> Pemesanan();
     }
     [DataContract]
     public class CekLokasi
